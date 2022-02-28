@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ==== TITLE ==== -->
-    <title>Aula 03 - Vue-js do jeito ninja!</title>
+    <title>Aula 07 - Vue-js do jeito ninja!</title>
 
     <!-- ==== FAVICON ==== -->
     <link rel="shortcut icon" href="images/icons/logo-favicon.png" type="image/x-icon">
@@ -48,27 +48,27 @@
 
                 <!-- ==== EXPLICAÇÃO ==== -->
                 <div class="explanation">
-                    Aqui foi criado um <span class="strong-span">array [languages]</span> com 5 linguagens de programação, e foi utilizado o
-                    "<span class="strong-span">v-for</span>". <br>
-                    No loop a variável <span class="strong-span">item</span> percorreu por todo o <span
-                        class="strong-span">array</span> listando e imprimindo
-                    todos os nomes.
-                    <div class="explanation-code">
-                        <img src="images/features/Aula-03-1.jpg" alt="Aula 03 Code">
-                        <img src="images/features/Aula-03-2.jpg" alt="Aula 03 Code">
-                    </div>
+                    Foi utilizados filtros de <span class="strong-span">javascript</span> para formatar os nomes a
+                    baixo. <br>
+                    O <span class="strong-span">toUpperCase()</span> para deixar os nomes em caixa alta e o <span
+                        class="strong-span">truncate('5')</span> para limitar em 5 os números de caracteres dos nomes.
+                    <br>
+                    Utilização: <span class="strong-span">user.name | toUpperCase() | truncate('5')</span>
                 </div>
 
                 <!-- ==== EXEMPLO ==== -->
                 <div class="example text-left">
                     <ul class="d-flex">
-                        <li class="list-example" v-for="item in languages"><span class="strong-span">[ {{item.name}}
-                                ]</span></li>
+                        <li class="list-example" v-for="user in users">
+                            <span class="strong-span">[
+                                {{user.name | toUpperCase() | truncate('5') }} ]
+                            </span>
+                        </li>
                     </ul>
                 </div>
 
             </div>
-            <a href="aula-04.html" class="btn btn-secondary">Próxima aula - Aula 4</a>
+            <a href="aula-08.html" class="btn btn-secondary">Próxima aula - Aula 8</a>
         </div>
     </section>
 
@@ -77,24 +77,32 @@
         var app = new Vue({
             el: ".app",
             data: {
-                title: "Aula 03 - Vue.js do jeito ninja!",
-                description: "Diretiva v-for e suas peculiaridades",
-                languages: [{
-                        name: "JavaScript"
+                title: "Aula 07 - Vue.js do jeito ninja!",
+                description: "Filters, formatando textos",
+                users: [{
+                        name: 'Rick Grimes'
                     },
                     {
-                        name: "PHP"
+                        name: 'Daryl'
                     },
                     {
-                        name: "C#"
-                    },
-                    {
-                        name: "Java"
-                    },
-                    {
-                        name: "Python"
+                        name: 'Negan'
                     }
                 ]
+            },
+
+            filters: {
+                toUpperCase(str) {
+                    return str.toUpperCase();
+                },
+
+                truncate(str, length) {
+                    var output = str;
+                    if (output.length > length) {
+                        output = str.substring(0, length) + '...';
+                    }
+                    return output;
+                }
             }
         });
     </script>
