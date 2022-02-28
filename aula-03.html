@@ -48,14 +48,41 @@
 
                 <!-- ==== EXPLICAÇÃO ==== -->
                 <div class="explanation">
-                    Aqui foi criado um <span class="strong-span">array [languages]</span> com 5 linguagens de programação, e foi utilizado o
+                    Aqui foi criado um <span class="strong-span">array [languages]</span> com 5 linguagens de
+                    programação, e foi utilizado o
                     "<span class="strong-span">v-for</span>". <br>
                     No loop a variável <span class="strong-span">item</span> percorreu por todo o <span
                         class="strong-span">array</span> listando e imprimindo
                     todos os nomes.
+
                     <div class="explanation-code">
-                        <img src="images/features/Aula-03-1.jpg" alt="Aula 03 Code">
-                        <img src="images/features/Aula-03-2.jpg" alt="Aula 03 Code">
+                        <article>
+                            <span class="strong-span">Array</span> <br>
+                            <span class="count-line">1</span>languages: [ <br>
+                            <span class="count-line">2</span>&nbsp; &nbsp;{name: <span class="text-warning">"JavaScript"</span>},<br>
+                            <span class="count-line">3</span>&nbsp; &nbsp;{name: <span class="text-warning">"PHP"</span>},<br>
+                            <span class="count-line">4</span>&nbsp; &nbsp;{name: <span class="text-warning">"C#"</span>},<br>
+                            <span class="count-line">5</span>&nbsp; &nbsp;{name: <span class="text-warning">"Java"</span>},<br>
+                            <span class="count-line">6</span>&nbsp; &nbsp;{name: <span class="text-warning">"Python"</span>}<br>
+                            <span class="count-line">7</span>]
+                        </article>
+
+                        <article>
+                            <span class="strong-span">Aplicando v-for no HTML</span> <br>
+
+                            <span class="count-line">1</span>&lt;<span class="text-danger">li</span> 
+                            <span class="text-success">v-for</span><span class="text-warning">="item in languages"</span>&gt;<br>
+
+                            <span class="count-line">2</span>&nbsp; &nbsp;&lt;<span class="text-danger">span</span>&gt;<br>
+
+                            <span class="count-line">3</span>&nbsp;&nbsp;&nbsp; 
+                            { item.name }
+                            <span class="html-comment">// Correto é duas chaves " { { } } "</span> <br>
+
+                            <span class="count-line">4</span>&nbsp; &nbsp;&lt;/<span class="text-danger">span</span>&gt;<br>
+
+                            <span class="count-line">5</span>&lt;/<span class="text-danger">li</span>&gt;
+                        </article>
                     </div>
                 </div>
 

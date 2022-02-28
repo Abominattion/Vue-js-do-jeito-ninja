@@ -8,6 +8,10 @@ h1{
     margin-bottom: 20px !important;
 }
 
+.flex-100{
+    flex-basis: 100% !important;
+}
+
 .text-left{
     text-align: left;
 }
@@ -27,7 +31,9 @@ h1{
 
 .main{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100%;
+    padding: 60px 0;
     background: #222f3e;
     background-image: url(./../images/icons/logo-favicon.png);
     background-size: 40%;
@@ -41,7 +47,7 @@ h1{
 }
 
 .content{
-    width: 800px;
+    width: 80%;
     min-height: 250px;
     display: flex;
     flex-direction: column;
@@ -62,21 +68,40 @@ h1{
     font-weight: 600;
 }
 
-.explanation-code img{
-    margin-top: 10px;
+.explanation-code{
+    width: 100%;
+    display: flex;
+    gap: 5px; 
+    margin-top: 30px;
+}
+
+.html-comment{
+    font-size: 14px;
+    color: #616468;
+}
+
+.count-line{
+    margin-right: 30px;
+    font-size: 18px;
+    color: #555555;
+}
+
+.explanation-code article{
+    flex-basis: 50%;
+    padding: 1rem;
+    font-size: 1em;
     border-radius: 8px;
+    background: #16171C;
+    box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.3);
 }
-.example{
-    width: calc(800px - 80px);
-}
+
 .example img{
-    width: 540px;
-    height: 240px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.3);
 }
-
 
 /* ==== BUTTON ==== */
 .btn {
@@ -185,12 +210,22 @@ h1{
 }
 
 @media screen and (max-width: 1000px) {
+
+    .main{
+        padding: 80px 10px 30px 10px;
+        height: 100%;
+    }
+
     .content{
         width: 700px;
     }
 
     .example {
         width: calc(700px - 80px);
+    }
+
+    .list-example {
+        margin: 0px 15px;
     }
 }
 
@@ -202,15 +237,23 @@ h1{
     .example {
         width: calc(600px - 80px);
     }
-}
 
-@media screen and (max-width: 800px) {
-
-    .main{
-        padding: 80px 10px 30px 10px;
-        height: 100%;
+    .list-example {
+        margin: 0px 14px;
+        font-size: 1.2em;
     }
- 
+
+    .explanation-code{
+        flex-wrap: wrap;
+    }
+
+    .explanation-code article{
+        flex-basis: 100%;
+    }
+
+    .d-flex{
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -254,6 +297,7 @@ h1{
     .example h4{
         font-size: 20px; 
     }
+
 }
 
 @media screen and (max-width: 400px) {
